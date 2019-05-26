@@ -1,2 +1,79 @@
 # parse
-parse
+Server and dashboard demo
+
+# apt
+sudo apt update
+apt -v
+
+# brew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+echo 'export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> ~/.bash_profile
+echo 'export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"' >>~/.bash_profile
+echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"' >>~/.bash_profile
+source ~/.bash_profile
+echo $PATH
+brew -v
+
+# node
+brew install node
+
+# https://www.terlici.com/2015/06/20/running-node-forever.html
+npm install pm2 -g
+pm2 list
+pm2 start app.js
+pm2 stop app.js
+pm2 reload app.js
+pm2 delete app.js
+pm2 startup systemd
+
+# mongodb 
+https://docs.mongodb.com/manual/installation/
+
+sudo apt update
+sudo apt install -y mongodb
+
+mongo --version
+
+sudo mkdir -p /data/db
+sudo chown -R `id -un` /data/db
+mongod --dbpath /data/db
+
+mongod
+
+mongodump -h <hostName> --port <portNumber>
+mongorestore -h <hostname><:port> -d <dbName> <path>
+
+# kill process
+ps ax | grep mongod
+kill -9 <pid>
+
+lsof -iTCP -sTCP:LISTEN -n -P
+sudo kill -9 <pid>
+
+# parse
+https://docs.parseplatform.org/parse-server/guide/
+https://github.com/parse-community/parse-dashboard
+
+npm install -g parse-server mongodb-runner
+npm install -g parse-dashboard
+
+git clone https://github.com/jiangyang5157/parse.git
+
+npm install
+npm start
+
+# test
+pm2 start mongod
+pm2 start server
+pm2 start dashboard
+
+## local example
+curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"serverUrl":"http://localhost:1337","databaseUri":"mongodb://localhost:27017/dev"}' http://localhost:1337/parse/classes/MyClass
+
+curl -H "X-Parse-Application-Id: myAppId" http://localhost:1337/parse/classes/MyClass
+
+## remote example
+curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"name":"mumu","action":"chidaishujing"}' http://111.231.2.169:1337/parse/classes/MyClass
+
+curl -H "X-Parse-Application-Id: myAppId" http://111.231.2.169:1337/parse/classes/MyClass
