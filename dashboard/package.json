@@ -1,0 +1,22 @@
+{
+  "name": "parse-dashboard",
+  "version": "1.0.0",
+  "description": "An example Parse API dashboard using the parse-dashboard module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiangyang5157/parse"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "kerberos": "~0.0.x",
+    "parse-dashboard": "~1.0.7"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=4.3"
+  }
+}

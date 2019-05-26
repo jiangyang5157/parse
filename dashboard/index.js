@@ -1,0 +1,67 @@
+var express = require('express');
+var ParseDashboard = require('parse-dashboard');
+
+var appName = process.env.APP_NAME;
+
+var appId = process.env.APP_ID;
+var masterKey = process.env.MASTER_KEY;
+
+var serverDomain = process.env.SERVER_DOMAIN;
+var serverPort = process.env.SERVER_PORT;
+var mount= process.env.MOUNT;
+var serverUrl;
+
+var port = process.env.SERVER_PORT;
+
+if (!appName) {
+  appName = 'MyApp'
+}
+
+if (!appId) {
+  appId = 'myAppId';
+}
+if (!masterKey) {
+  masterKey = 'myMasterKey';
+}
+
+if (!serverDomain) {
+  serverDomain = 'http://localhost';
+}
+if (!serverPort) {
+  serverPort = '1337';
+}
+if (!mount) {
+  mount = '/parse';
+}
+serverUrl = serverDomain + ':' + String(serverPort) + mount;
+
+if (!port) {
+    port = '4040';
+}
+
+console.log('appName=' + appName);
+console.log('appId=' + appId);
+console.log('masterKey=' + masterKey);
+console.log('serverUrl=' + serverUrl);
+
+var dashboard = new ParseDashboard({
+  apps: [
+    {
+      appId: appId,
+      masterKey: masterKey,
+      serverURL: serverUrl,
+      appName: appName,
+      production: false,
+    },
+  ],
+});
+
+var app = express();
+
+// make the Parse Dashboard available at /
+app.use('/', dashboard);
+
+var httpServer = require('http').createServer(app);
+httpServer.listen(port, function() {
+  console.log('parse-dashboard running on: ' + serverUrl);
+});
