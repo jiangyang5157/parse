@@ -1,8 +1,6 @@
 var express = require('express');
 var ParseDashboard = require('parse-dashboard');
 
-var appName = process.env.APP_NAME;
-
 var appId = process.env.APP_ID;
 var masterKey = process.env.MASTER_KEY;
 
@@ -13,9 +11,9 @@ var serverUrl;
 
 var port = process.env.SERVER_PORT;
 
-if (!appName) {
-  appName = 'MyApp'
-}
+var appName = process.env.APP_NAME;
+var username = process.env.USERNAME;
+var password = process.env.PASSWORD;
 
 if (!appId) {
   appId = 'myAppId';
@@ -39,13 +37,23 @@ if (!port) {
     port = '4040';
 }
 
+if (!appName) {
+  appName = 'MyApp'
+}
+if (!username) {
+  username = 'username'
+}
+if (!password) {
+  password = 'password'
+}
+
 console.log('appName=' + appName);
 console.log('appId=' + appId);
 console.log('masterKey=' + masterKey);
 console.log('serverUrl=' + serverUrl);
 
-var dashboard = new ParseDashboard({
-   allowInsecureHTTP: true,
+var dashboard = new ParseDashboard(
+  {
    apps: [
     {
       appId: appId,
@@ -57,11 +65,15 @@ var dashboard = new ParseDashboard({
   ],
   users: [
     {
-      user: 'user',
-      password: 'password',
+      user: username,
+      pass: password,
     }
   ],
-}, {allowInsecureHTTP: true});
+  }, 
+  {
+    allowInsecureHTTP: true
+  }
+);
 
 var app = express();
 
