@@ -45,7 +45,8 @@ console.log('masterKey=' + masterKey);
 console.log('serverUrl=' + serverUrl);
 
 var dashboard = new ParseDashboard({
-  apps: [
+   allowInsecureHTTP: true,
+   apps: [
     {
       appId: appId,
       masterKey: masterKey,
@@ -54,7 +55,13 @@ var dashboard = new ParseDashboard({
       production: false,
     },
   ],
-});
+  users: [
+    {
+      user: 'user',
+      password: 'password',
+    }
+  ],
+}, {allowInsecureHTTP: true});
 
 var app = express();
 
