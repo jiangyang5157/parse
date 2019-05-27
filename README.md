@@ -77,3 +77,22 @@ curl -H "X-Parse-Application-Id: myAppId" http://localhost:1337/parse/classes/My
 curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"name":"mumu","action":"chidaishujing"}' http://111.231.2.169:1337/parse/classes/MyClass
 
 curl -H "X-Parse-Application-Id: myAppId" http://111.231.2.169:1337/parse/classes/MyClass
+
+# SSL
+cert: https://letsencrypt.org/getting-started/
+https: https://blog.csdn.net/upshi/article/details/78447320
+
+cert eg:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/mrjiangyang.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/mrjiangyang.com/privkey.pem
+   Your cert will expire on 2019-08-25. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot renew"
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
