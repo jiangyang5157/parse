@@ -1,3 +1,15 @@
+# Miscellaneous
+*.class
+*.lock
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
@@ -7,7 +19,6 @@ node_modules
 
 # Logs
 logs
-*.log
 
 # Runtime data
 pids
