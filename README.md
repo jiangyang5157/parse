@@ -74,7 +74,7 @@ curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/
 curl -H "X-Parse-Application-Id: myAppId" http://localhost:1337/parse/classes/MyClass
 
 ## remote example
-curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"name":"mumu","action":"chidaishujing"}' http://118.24.251.163:1337/parse/classes/MyClass
+curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"name":"Yang","action":"test remote parse server"}' http://118.24.251.163:1337/parse/classes/MyClass
 
 curl -H "X-Parse-Application-Id: myAppId" http://118.24.251.163:1337/parse/classes/MyClass
 
