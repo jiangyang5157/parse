@@ -1,9 +1,11 @@
 # parse
 Server and dashboard demo
 
-# apt
-sudo apt update
+# apt (ubuntu)
 apt -v
+
+# Yum (CentOS)
+yum --version
 
 # brew
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
