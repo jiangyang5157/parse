@@ -69,9 +69,9 @@ pm2 start server
 pm2 start dashboard
 
 ## local example
-curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"serverUrl":"http://118.24.251.163:1337","databaseUri":"mongodb://118.24.251.163:27017/dev"}' http://118.24.251.163:1337/parse/classes/MyClass
+curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"serverUrl":"http://localhost:1337","databaseUri":"mongodb://localhost:27017/dev"}' http://localhost:1337/parse/classes/MyClass
 
-curl -H "X-Parse-Application-Id: myAppId" http://118.24.251.163:1337/parse/classes/MyClass
+curl -H "X-Parse-Application-Id: myAppId" http://localhost:1337/parse/classes/MyClass
 
 ## remote example
 curl -X POST -H "X-Parse-Application-Id: myAppId" -H "Content-Type: application/json" -d '{"name":"mumu","action":"chidaishujing"}' http://118.24.251.163:1337/parse/classes/MyClass
