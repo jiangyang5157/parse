@@ -14,28 +14,28 @@ var databaseUri = process.env.DATABASE_URI;
 var cloudMain = process.env.CLOUD_MAIN;
 
 if (!appId) {
-  appId = 'myAppId';  
+  appId = 'myAppId';
 }
 if (!masterKey) {
-  masterKey = 'myMasterKey';  
+  masterKey = 'myMasterKey';
 }
 
 if (!serverDomain) {
-  serverDomain = 'http://localhost';  
+  serverDomain = 'http://118.24.251.163';
 }
 if (!port) {
-  port = '1337';  
+  port = '1337';
 }
 if (!mount) {
-  mount = '/parse';  
+  mount = '/parse';
 }
 serverUrl = serverDomain + ':' + String(port) + mount
 
 if (!databaseUri) {
-  databaseUri = 'mongodb://localhost:27017/dev';  
+  databaseUri = 'mongodb://118.24.251.163:27017/dev';
 }
 if (!cloudMain) {
-  cloudMain = __dirname + '/cloud/main.js';  
+  cloudMain = __dirname + '/cloud/main.js';
 }
 
 console.log('appId=' + appId);

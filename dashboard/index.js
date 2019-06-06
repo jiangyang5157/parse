@@ -23,7 +23,7 @@ if (!masterKey) {
 }
 
 if (!serverDomain) {
-  serverDomain = 'http://localhost';
+  serverDomain = 'http://118.24.251.163';
 }
 if (!serverPort) {
   serverPort = '1337';
