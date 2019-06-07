@@ -1,13 +1,27 @@
+# SSH
+chmod 400 ~/Documents/tencent/tencent_cloud_keypair
+ssh -i ~/Documents/tencent/tencent_cloud_keypair <user_name>@<IP_address>
+
 # parse
 Server and dashboard demo
 
-# apt (ubuntu)
+# apt (Ubuntu)
 apt -v
 
 # Yum (CentOS)
 yum --version
 
+# Ruby
+https://www.ruby-lang.org/en/documentation/installation/
+CentOS:
+yum install ruby
+
+# Don't run this as root!
+https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-centos-quickstart
+
 # brew
+https://docs.brew.sh/Homebrew-on-Linux
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
 echo 'export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> ~/.bash_profile
@@ -16,6 +30,9 @@ echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"' >>~/.ba
 source ~/.bash_profile
 echo $PATH
 brew -v
+
+# python
+brew install python
 
 # node
 brew install node
@@ -32,6 +49,7 @@ pm2 startup systemd
 # mongodb 
 https://docs.mongodb.com/manual/installation/
 
+Ubuntu:
 sudo apt update
 sudo apt install -y mongodb
 
