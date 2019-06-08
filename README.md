@@ -1,28 +1,19 @@
-# SSH
-chmod 400 ~/Documents/tencent/tencent_cloud_keypair
-ssh -i ~/Documents/tencent/tencent_cloud_keypair <user_name>@<IP_address>
+# ssh
+chmod 400 <ssh_key_path>
+ssh -i <ssh_key_path> <user_name>@<ip>
 
-# parse
-Server and dashboard demo
+WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+ssh-keygen -R "<ip>"
 
-# apt (Ubuntu)
-apt -v
-
-# Yum (CentOS)
-yum --version
-
-# Ruby
-https://www.ruby-lang.org/en/documentation/installation/
-CentOS:
-yum install ruby
-
-# Don't run this as root!
-https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-centos-quickstart
+# permission
+sudo chown -R $(whoami) <path>
 
 # brew
 https://docs.brew.sh/Homebrew-on-Linux
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+echo 'export PATH="/home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby/current/bin:$PATH"' >>~/.bash_profile
 echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
 echo 'export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> ~/.bash_profile
 echo 'export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"' >>~/.bash_profile
@@ -69,9 +60,9 @@ mongorestore -h <hostname><:port> -d <dbName> <path>
 
 # kill process
 sudo ps ax | grep mongod
-kill -9 <pid>
 
 sudo lsof -iTCP -sTCP:LISTEN -n -P
+
 sudo kill -9 <pid>
 
 # parse
@@ -79,15 +70,15 @@ https://docs.parseplatform.org/parse-server/guide/
 https://github.com/parse-community/parse-dashboard
 
 sudo npm install -g parse-server mongodb-runner
-sudo npm install -g parse-dashboard
-
-git clone https://github.com/jiangyang5157/parse.git
-
 npm install
+sudo npm install -g parse-dashboard
+npm install
+
 npm start
 
 # test
-pm2 start mongod
+git clone https://github.com/jiangyang5157/parse.git
+// pm2 start mongod
 pm2 start server
 pm2 start dashboard
 
