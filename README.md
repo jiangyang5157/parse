@@ -69,14 +69,6 @@ sudo kill -9 <pid>
 https://docs.parseplatform.org/parse-server/guide/
 https://github.com/parse-community/parse-dashboard
 
-sudo npm install -g parse-server mongodb-runner
-npm install
-sudo npm install -g parse-dashboard
-npm install
-
-npm start
-
-# test
 git clone https://github.com/jiangyang5157/parse.git
 // pm2 start mongod
 pm2 start server
