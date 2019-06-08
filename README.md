@@ -35,10 +35,13 @@ brew -v
 brew install python
 
 # node
-brew install node
+sudo apt install nodejs
+
+# npm
+sudo apt install npm
 
 # https://www.terlici.com/2015/06/20/running-node-forever.html
-npm install pm2 -g
+sudo npm install pm2 -g
 pm2 list
 pm2 start app.js
 pm2 stop app.js
@@ -65,18 +68,18 @@ mongodump -h <hostName> --port <portNumber>
 mongorestore -h <hostname><:port> -d <dbName> <path>
 
 # kill process
-ps ax | grep mongod
+sudo ps ax | grep mongod
 kill -9 <pid>
 
-lsof -iTCP -sTCP:LISTEN -n -P
+sudo lsof -iTCP -sTCP:LISTEN -n -P
 sudo kill -9 <pid>
 
 # parse
 https://docs.parseplatform.org/parse-server/guide/
 https://github.com/parse-community/parse-dashboard
 
-npm install -g parse-server mongodb-runner
-npm install -g parse-dashboard
+sudo npm install -g parse-server mongodb-runner
+sudo npm install -g parse-dashboard
 
 git clone https://github.com/jiangyang5157/parse.git
 
