@@ -64,6 +64,15 @@ app.get('/test', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/test.html'));
 });
 
+var fs = require('fs');
+var resumeFilePath= '/Users/yangjiang/Documents/workspace/tex/cv/resume.pdf';
+app.get('/resume', function(request, response){
+  fs.readFile(resumeFilePath, function (err,data){
+     response.contentType("application/pdf");
+     response.send(data);
+  });
+});
+
 // The rest of your web routes
 app.get('/', function(req, res) {
   res.status(200).send('I dream of being a website.');
