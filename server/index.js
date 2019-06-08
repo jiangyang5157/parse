@@ -32,7 +32,7 @@ if (!mount) {
 serverUrl = serverDomain + ':' + String(port) + mount
 
 if (!databaseUri) {
-  databaseUri = 'mongodb://118.24.251.163:27017/dev';
+  databaseUri = 'mongodb://localhost:27017/dev';
 }
 if (!cloudMain) {
   cloudMain = __dirname + '/cloud/main.js';
