@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "kerberos": "~0.0.x",
+    "kerberos": "~1.0.x",
     "parse-dashboard": "~1.0.7"
   },
   "scripts": {
